@@ -93,6 +93,7 @@ justif-content: center;
   display: inline-block;
   margin: auto;
   align-content: center;
+  padding: 0px;
 }
 
 .suite {
@@ -112,6 +113,6 @@ justif-content: center;
     0 0 100px #0ff,
     0 0 150px #0ff;
   text-align: center;
-  font-size: 85px;
+  font-size: 60px;
   padding-top: 170px;
 }

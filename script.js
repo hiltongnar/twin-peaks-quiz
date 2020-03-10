@@ -136,7 +136,7 @@ function questRender(quest){
     $(".main-game").append(
       `  <div class="landing-container">
           <div>
-           <p class="final">FINAL SCORE = ` + finalScore(playerScore,masterQuestions.length) + ` % </p>
+           <p class="final">FINAL SCORE =<br> ` + finalScore(playerScore,masterQuestions.length) + ` % </p>
           </div> `
 
     );
@@ -198,18 +198,40 @@ $('.button').click(function(){
 //
 //
 question1 = toQuestion(
-  'What is 2+2',
-  '1',
-  '7',
-  '4',
-  '10',
-  '3'
+  'According to the "Welcome to Twin Peaks" sign, how many people live there?',
+  '5,201',
+  '51,201',
+  '2,501',
+  '15,102',
+  '2'
 );
 
 
-question2 = toQuestion('What is 2 + 3', '1', '7', '4', '2', '2');
-question3 = toQuestion('What is 2+10', '1', '7', '4', '10', '4');
-question4 = toQuestion('What is 20+20', '1', '7', '4', '10', '4');
+question2 = toQuestion(
+  'What name did David Lynch originally want to title the series?',
+   'Northern Exposure',
+   'The Great Northern',
+   'White Tail Mountain',
+   'Northwest Passage',
+   '4'
+ );
+
+question3 = toQuestion(
+  'What is the name of Laura Palmers therapist?',
+  'Dr. Jacoby',
+  'Dr. Briggs',
+  'Dr. Hurley',
+  'Dr. Jeffries',
+  '1'
+);
+question4 = toQuestion(
+  'On what day did Agent Dale Cooper first come to Twin Peaks?',
+   'March 24th',
+   'April 7th',
+   'February 24th',
+   'September 19th',
+   '3'
+);
 
 //
 //
