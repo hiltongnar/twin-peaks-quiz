@@ -32,16 +32,137 @@ Make a function that takes in 5 parameters, the first 4 are
 possible answers and the fifth is the right answer. Return
 an object.
 
-week 1 to do:
-click event on start button (alert test)
-empty container class, place in page two
-write HTML/CSS for page 2
-
-think through all of the functions
-
-
+to do (3/2):
+finish comments
+create HTML for Landing page
+call function in the else statement
+create function
+  empty main-game
+  append landing page html (static)
+  create a variable to calculate score playerscore/ masterArray.length
+  round whole cardNumber
+  change the append landing page (dynamic)
 */
 
+
+//
+//
+// --------------------------
+// Declare global variables player score and counter to loop through master questions array
+//
+let playerScore = 0;
+let counter = 0;
+
+
+
+//
+//
+// -------------------------
+// Function to render question.
+// Empties the page.
+// Appends question to documents.
+// Calls click function.
+//
+//
+function questRender(quest){
+
+  $(".main-game").empty();
+
+  $(".main-game").append(
+    `
+    <div class="question-block">` + quest.question + `</div>
+  </div>
+  <div class="container">
+    <div class="block">
+        <div class="col playing-card" id="1">
+          <p class="suite">1&spades;</p>
+          <p>
+          ` + quest.answer1 + `
+          </p>
+          </div>
+        <div class="col playing-card" id="2">
+          <p class="suite"><font color="red">2&hearts;</font></p>
+          <p>
+          ` + quest.answer2 + `
+          </p></div>
+    </div>
+    <div class="block">
+        <div class="col playing-card" id="3">
+          <p class="suite"><font color="red">3&diams;</font></p>
+          <p>
+          ` + quest.answer3 + `
+          </p></div>
+        <div class="col playing-card" id="4">
+          <p class="suite">4&clubs;</p>
+          <p>
+          ` + quest.answer4 + `
+          </p></div>
+    </div>
+    `
+  );
+
+  //
+  //
+  //--------------------------
+  //adds click event to playing cards.
+  //increments playerScore for correct answer.
+  //renders landing page when user has completed all questions in masterQuestions array.
+  //
+  //
+  $('.playing-card').click(function(){
+    let cardNumber = this.id;
+    if (cardNumber === quest.correctAnswer){
+      playerScore = playerScore + 1;
+    }
+    counter++;
+    if (counter < masterQuestions.length) {
+      questRender(masterQuestions[counter]);
+    } else {
+      finalPage();
+    }
+
+  });
+}
+  //
+  //
+  //----------------------------------
+  //function to render final score
+  //
+  //
+  function finalPage(){
+
+    $(".main-game").empty();
+
+    $(".main-game").append(
+      `  <div class="landing-container">
+          <div>
+           <p class="final">FINAL SCORE = ` + finalScore(playerScore,masterQuestions.length) + ` % </p>
+          </div> `
+
+    );
+  }
+
+
+
+
+
+function finalScore(num1,num2){
+
+  let obtained = num1;
+  let possible = num2;
+  let percent = obtained * 100 / possible;
+  percent = Math.ceil(percent);
+  return percent;
+}
+
+
+
+//
+//
+//---------------------------------------
+//
+//
+//
 const toQuestion = (quest, ans1, ans2, ans3, ans4, rightAnswer) => {
 
   let object1 = {
@@ -55,12 +176,47 @@ const toQuestion = (quest, ans1, ans2, ans3, ans4, rightAnswer) => {
 
 
   return object1;
-}
+};
 
-question1 = toQuestion('What is 2+2', '1', '7', '4', '10', '4');
-question2 = toQuestion('What is 2+2', '1', '7', '4', '10', '4');
-question3 = toQuestion('What is 2+2', '1', '7', '4', '10', '4');
-question4 = toQuestion('What is 2+2', '1', '7', '4', '10', '4');
+//
+//
+//-------------------------------
+//initial button click empties landing page and renders questions
+//
+//
+$('.button').click(function(){
+  $(".main-game").empty();
+  questRender(masterQuestions[counter]);
+});
+
+
+
+//
+//
+//---------------------------------------
+//returning objects to question variables
+//
+//
+question1 = toQuestion(
+  'What is 2+2',
+  '1',
+  '7',
+  '4',
+  '10',
+  '3'
+);
+
+
+question2 = toQuestion('What is 2 + 3', '1', '7', '4', '2', '2');
+question3 = toQuestion('What is 2+10', '1', '7', '4', '10', '4');
+question4 = toQuestion('What is 20+20', '1', '7', '4', '10', '4');
+
+//
+//
+//______________________________________________________________
+//pushing the question objects into the master array
+//
+//
 
 masterQuestions = [];
 masterQuestions.push(question1);

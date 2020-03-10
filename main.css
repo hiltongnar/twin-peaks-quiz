@@ -1,15 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Carrois+Gothic+SC&display=swap');
+
+.landing-container {
+  text-align: center;
+}
+
 .text {
-  color : darkgreen;
+  font-family: Carrois Gothic SC;
+  color: #000000;
+  text-shadow:
+    0 0 5px #39ff14,
+    0 0 10px #39ff14,
+    0 0 20px #fff,
+    0 0 40px #0ff,
+    0 0 80px #0ff,
+    0 0 90px #0ff,
+    0 0 100px #0ff,
+    0 0 150px #0ff;
   text-align: center;
   font-size: 85px;
-  padding-top: 25px;
+  padding-top: 35px;
 }
 .start{
   text-align: center;
-  padding: 10px;
+  padding: 35px;
 }
 
-body {
+.twinpeaks-background {
   background-color: lightblue;
   background-image:url("images/background.jpg");
   background-repeat: no-repeat;
@@ -27,4 +43,75 @@ body {
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+  border-radius: 15px;
+  box-shadow: 5px 10px 18px #000000;
+}
+
+.playing-card {
+  border-color: #808080 #000000 #000000 #808080;
+ border-width: 2px;
+ border-style: solid;
+ color: #000000;
+ font-size: 20pt;
+ width:  7.5em;
+ height: 10em;
+ border-radius: 15%;
+ margin: 25px;
+ background-color: #E5E4DB;
+ font-family: Carrois Gothic SC;
+ text-align: center;
+ box-shadow: 5px 10px 18px #000000;
+}
+.question-block {
+  font-family: Carrois Gothic SC;
+  color: #000000;
+  text-shadow:
+    0 0 5px #39ff14,
+    0 0 10px #39ff14,
+    0 0 20px #fff,
+    0 0 40px #0ff,
+    0 0 80px #0ff,
+    0 0 90px #0ff,
+    0 0 100px #0ff,
+    0 0 150px #0ff;
+  text-align: center;
+  font-size: 35px;
+  padding-top: 35px;
+  width: 300px;
+  margin: 10px auto 10px auto;
+}
+
+
+.container {
+width: 70%;
+margin: auto;
+display: flex;
+justif-content: center;
+}
+
+.block {
+  display: inline-block;
+  margin: auto;
+  align-content: center;
+}
+
+.suite {
+  text-align: left;
+  padding: 10px;
+}
+.final {
+  font-family: Carrois Gothic SC;
+  color: #000000;
+  text-shadow:
+    0 0 5px #39ff14,
+    0 0 10px #39ff14,
+    0 0 20px #fff,
+    0 0 40px #0ff,
+    0 0 80px #0ff,
+    0 0 90px #0ff,
+    0 0 100px #0ff,
+    0 0 150px #0ff;
+  text-align: center;
+  font-size: 85px;
+  padding-top: 170px;
 }
