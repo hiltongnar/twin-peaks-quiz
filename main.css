@@ -61,6 +61,7 @@
  font-family: Carrois Gothic SC;
  text-align: center;
  box-shadow: 5px 10px 18px #000000;
+ cursor: pointer;
 }
 .question-block {
   font-family: Carrois Gothic SC;
